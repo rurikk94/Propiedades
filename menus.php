@@ -14,26 +14,27 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3">
-						 <a href="<?=$site_config['URL_DOMINIO']?>"><div class="logo"><img src="<?=$site_config['URL_LOGO']?>" alt=""></a></div>
+						<div class="logo"><img src="<?=$site_config['URL_LOGO']?>" alt=""></div>
+						<!--<div class="logo"><img src="%URL_LOGO%" alt=""></div>-->
 					</div>
 					<div class="col-md-9">
 						<div class="topMenu">
 							<div class="flat-mega-menu">
 								<ul id="idrop" class="mcollapse changer">
-									<li><a href="<?=$site_config['URL_DOMINIO']?>">Inicio</a></li> <!-- idElemento 1 Inicio-->
-									<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=2">Arriendo</a> <!-- idElemento 2 Arriendo tipoNegocioId=2 -->
+									<li><a href="$URL_DOMINIO">$1</a></li> <!-- idElemento 1 Inicio-->
+									<li><a href="/buscarPropiedades.php?tipo_negocio=$tipoNegocioId">$2</a> <!-- idElemento 2 Arriendo tipoNegocioId=2 -->
 										<ul class="drop-down one-column hover-fade b_bt">
-											<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=$2&amp;tipoInmuebleId=$tipoInmuebleId">$tipoInmueble</a></li>
+											<li><a href="/buscarPropiedades.php?tipo_negocio=$tipoNegocioId&amp;tipoInmuebleId=$tipoInmuebleId">$tipoInmueble</a></li>
 										</ul>
 									</li>
-									<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=1">Ventas</a> <!-- idElemento 3 Ventas  tipoNegocioId=1-->
+									<li><a href="/buscarPropiedades.php?tipo_negocio=$tipoNegocioId">$3</a> <!-- idElemento 3 Ventas  tipoNegocioId=1-->
 										<ul class="drop-down one-column hover-fade b_bt">
-											<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=$1&amp;tipoInmuebleId=$tipoInmuebleId">$tipoInmueble</a></li>
+											<li><a href="/buscarPropiedades.php?tipo_negocio=$tipoNegocioId&amp;tipoInmuebleId=$tipoInmuebleId">$tipoInmueble</a></li>
 										</ul>
 									</li>
-									<!--<li><a href="ultimas.php">$4</a></li> <!-- idElemento 4 ultimasPropiedades-->
-									<li><a href="quienesSomos.php">Nosotros</a></li> <!-- idElemento 5 quienesSomos---->
-									<li><a href="contacto.php">Contacto</a></li> <!-- idElemento 6 contacto-->
+									<li><a href="ultimas.php">$4</a></li> <!-- idElemento 4 ultimasPropiedades-->
+									<li><a href="quienesSomos.php">$5</a></li> <!-- idElemento 5 quienesSomos---->
+									<li><a href="contacto.php">$6</a></li> <!-- idElemento 6 contacto-->
 								</ul>
 							</div>
 							<!-- end menu -->
