@@ -59,7 +59,7 @@ require('funciones.php');
 										
 									<div class="sin-json">
 										<label>SECTOR</label>
-										<select class="form-control" name="barrio" id="barrio" data-placeholder="Seleccionar una zona"></select>
+										<select class="form-control" name="zona" id="zonas" data-placeholder="Seleccionar una zona"></select>
 										<script type="text/javascript">
 											$(document).ready(function() {
 												$(".selector-pais select").change(function() {
@@ -124,7 +124,7 @@ require('funciones.php');
 									</div>
 									<div class="col-sm-6">
 										<label>DORMITORIOS</label>
-										<select class="form-control" name="dormitorios" id="dormitorios">
+										<select class="form-control" name="alcobas" id="alcobas">
 											<option value="0" selected="selected">Todos</option>
 											<?php
 												for ($i = 1; $i <= 10; $i++) {
@@ -137,7 +137,7 @@ require('funciones.php');
 									</div>
 									<div class="col-sm-6">
 										<label>NO. BAÑOS</label>
-										<select class="form-control" name="banos" id="banos">
+										<select class="form-control" name="banios" id="banios">
 										<option value="0" selected="selected">Todos</option>
 											<?php
 												for ($i = 1; $i <= 10; $i++) {
@@ -164,7 +164,7 @@ require('funciones.php');
 							<div class="row">
 							
 							<?php
-								foreach($propiedades as $row){
+								foreach($propiedadesBuscadas as $row){
 							?>
 								<!-- Item -->
 								<div class="col-md-4 col-sm-6">
