@@ -14,13 +14,13 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3">
-						 <a href="<?=$site_config['URL_DOMINIO']?>"><div class="logo"><img src="<?=$site_config['URL_LOGO']?>" alt=""></a></div>
+						 <a href="http://<?=$site_config['URL_DOMINIO']?>"><div class="logo"><img src="<?=$site_config['URL_LOGO']?>" alt=""></a></div>
 					</div>
 					<div class="col-md-9">
 						<div class="topMenu">
 							<div class="flat-mega-menu">
 								<ul id="idrop" class="mcollapse changer">
-									<li><a href="<?=$site_config['URL_DOMINIO']?>">Inicio</a></li> <!-- idElemento 1 Inicio-->
+									<li><a href="http://<?=$site_config['URL_DOMINIO']?>">Inicio</a></li> <!-- idElemento 1 Inicio-->
 									<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=2">Arriendo</a> <!-- idElemento 2 Arriendo tipoNegocioId=2 -->
 										<ul class="drop-down one-column hover-fade b_bt">
 											<li><a href="<?=$site_config['URL_BUSCADOR']?>?tipo_negocio=$2&amp;tipoInmuebleId=$tipoInmuebleId">$tipoInmueble</a></li>

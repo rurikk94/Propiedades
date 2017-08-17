@@ -1,6 +1,6 @@
 <?php
-require_once("/conexion.php"); //Get MYSQL Connection Info
-require_once("/config.php");  //Get Site Settings and Vars ($site_config)
+require_once("conexion.php"); //Get MYSQL Connection Info
+require_once("config.php");  //Get Site Settings and Vars ($site_config)
 
 
 	//printf("Conjunto de caracteres inicial: %s\n", mysqli_character_set_name($conexion));

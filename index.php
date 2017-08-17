@@ -1,5 +1,5 @@
 <?php
-require('funciones.php');
+require("funciones.php");
 ?>
 <!DOCTYPE HTML>
 <html  class="" style="height: 100%;" lang="es-ES">
