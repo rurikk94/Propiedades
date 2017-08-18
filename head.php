@@ -24,21 +24,20 @@
     <!-- og tags twitter-->
     <meta name="twitter:card" value="<?=$site_config['DESCRIPCION_PAGINA_TXT']?>">
 
-        
+
     <link rel="shortcut icon" href="<?=$site_config['URL_LOGO']?>" type="jpeg">
 
     <link href="inicio_archivos/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="inicio_archivos/normalize.css" rel="stylesheet" type="text/css">
     <link href="inicio_archivos/font-face.css" rel="stylesheet" media="screen">
     <link href="inicio_archivos/drop-menu.css" rel="stylesheet" media="screen">
-    <link href="inicio_archivos/slicknav.css" rel="stylesheet" media="screen">
     <link href="inicio_archivos/font-awesome.css" rel="stylesheet" media="screen">
 
     <!-- Main Style -->
     <link href="inicio_archivos/style.css" rel="stylesheet" type="text/css">
     <!-- Main Style -->
             <link href="inicio_archivos/style-rojo.css" rel="stylesheet" type="text/css">
-    
+
 	<style>
 		@media print {
 			#Header, #Bar {
@@ -55,7 +54,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
 
     <script type="text/javascript" src="jquery.min.js"></script>
 	<!-- Add mousewheel plugin (this is optional) -->
@@ -79,13 +78,13 @@
 						'transitionIn'      : 'none',
 						'transitionOut'     : 'none',
 						'type'              : 'iframe'
-			}); 
+			});
 		});
 	</script>
-	
+
     <link type="text/css" rel="stylesheet" charset="UTF-8" href="inicio_archivos/translateelement.css">
-	<script type="text/javascript" charset="UTF-8" src="inicio_archivos/main_es.js"></script>	
-	<script type="text/javascript" charset="UTF-8" src="inicio_archivos/element_main.js"></script>	
+	<script type="text/javascript" charset="UTF-8" src="inicio_archivos/main_es.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="inicio_archivos/element_main.js"></script>
 	<style type="text/css">.fancybox-margin{margin-right:17px;}</style>
-	
+
 </head>

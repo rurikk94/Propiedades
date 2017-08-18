@@ -5,7 +5,7 @@ require("funciones.php");
 <html  class="" style="height: 100%;" lang="es-ES">
 <?php include("head.php"); // incluyes el archivo head.php ?>
 
-<!--         CUERPO ---------------------------- -->
+<!--         CUERPO -->
 <body style="position: relative; min-height: 100%; top: 0px;">
 <?php include("menus.php");// incluyes el archivo menus.php ?>
 
@@ -34,7 +34,7 @@ require("funciones.php");
 							<form action="<?=$site_config['URL_BUSCADOR'];?>" method="get">
 								<div class="row">
 									<div class="col-sm-12">
-									
+
 									<div class="selector-pais">
 										<label>CIUDAD</label>
 										<select class="form-control" name="ciudad" id="ciudad" data-placeholder="Seleccionar una ciudad"></select>
@@ -52,14 +52,14 @@ require("funciones.php");
 											});
 										</script>
 									</div>
-										
+
 									</div>
-									
+
 									<div class="col-sm-12">
-										
+
 									<div class="sin-json">
 										<label>SECTOR</label>
-										<select class="form-control" name="barrio" id="barrio" data-placeholder="Seleccionar una zona"></select>
+										<select class="form-control" name="barrio" id="barrio" data-placeholder="Seleccionar un barrio"></select>
 										<script type="text/javascript">
 											$(document).ready(function() {
 												$(".selector-pais select").change(function() {
@@ -148,7 +148,7 @@ require("funciones.php");
 											?>
 										</select>
 									</div>
-																	
+
 									<div class="col-sm-12">
 										<button type="submit" class="btn">BUSCAR</button>
 									</div>
@@ -157,19 +157,19 @@ require("funciones.php");
 							</div>
 						</div>
 					</div>  <!--fin menu lateral-->
-					
+
 					<div class="col-md-9 col-sm-8">
 						<div class="areaListados">
 							<h2>PROPIEDADES DESTACADAS <hr></h2>
 							<div class="row">
-							
+
 							<?php
 								foreach($propiedades as $row){
 							?>
 								<!-- Item -->
 								<div class="col-md-4 col-sm-6">
 									<div class="item">
-										<a href="/detalleInmueble.php?propiedadId=<?=$row['propiedadId']?>">
+										<a href="/detallePropiedad.php?propiedadId=<?=$row['propiedadId']?>">
 										<figure style="">
 											<img src="<?=$row['urlFotoPrincipal']?>" alt="<?=$row['tituloPropiedad']?>" title="<?=$row['tituloPropiedad']?>">
 										</figure>
@@ -184,7 +184,7 @@ require("funciones.php");
 										<div class="table">
 												<div class="colm"><img src="inicio_archivos/bt01.png" alt=""> <?=$row['numDormitorios']?> DORMITORIOS </div>
 												<div class="colm"><img src="inicio_archivos/bt02.png" alt=""> <?=$row['numBanos']?> BAÑOS</div>
-										</div>																			 
+										</div>
 										<strong class="price" style=""><?=numeracionChile($row['signo'],$row['precioPropiedad'])?></strong>
 										</a>
 									</div>
@@ -208,6 +208,6 @@ require("funciones.php");
 </html>
 <?php
 
-  // header("Location: index.php");  
+  // header("Location: index.php");
 
 ?>

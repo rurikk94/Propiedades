@@ -1,5 +1,5 @@
 <?php
-require_once("/funciones.php"); //Get MYSQL Connection Info
+require_once("funciones.php"); //Get MYSQL Connection Info
 
 $sql="SELECT id,barrionombre nombre FROM barrios WHERE ciudadId=".$_REQUEST["pais"]." ORDER BY nombre";
 $resultado=mysqli_query($conexion,$sql) or
