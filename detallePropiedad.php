@@ -5,7 +5,7 @@ require("funciones.php");
 <html  class="" style="height: 100%;" lang="es-ES">
 <?php include("head.php"); // incluyes el archivo head.php ?>
 
-<!--         CUERPO ---------------------------- -->
+<!--         CUERPO  -->
 <body style="position: relative; min-height: 100%; top: 0px;">
 <?php include("menus.php");// incluyes el archivo menus.php ?>
 
@@ -24,152 +24,89 @@ require("funciones.php");
 
 	<div style="margin-top: -120px"></div>
 	<section id="Main">
-		<div class="areaMain auto_margin">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-3 col-sm-4">  <!--menu lateral-->
-						<div class="sWidget">
-							<h2 class="text_color b_bt">BÚSQUEDA AVANZADA <hr class="b_bt"></h2>
-							<div class="searchForm">
-							<form action="<?=$site_config['URL_BUSCADOR'];?>" method="get">
-								<div class="row">
-									<div class="col-sm-12">
+    <div class="areaMain auto_margin">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9 col-sm-8">
+            <div class="areaBloqs">
+              <div class="row">
 
-									<div class="selector-pais">
-										<label>CIUDAD</label>
-										<select class="form-control" name="ciudad" id="ciudad" data-placeholder="Seleccionar una ciudad"></select>
-										<script type="text/javascript">
-											$(document).ready(function() {
-												$.ajax({
-														type: "POST",
-														url: "getPaises.php",
-														success: function(response)
-														{
-															$('.selector-pais select').html(response).fadeIn();
-														}
-												});
+                <div class="col-sm-12">
+                  <h2>Se arrienda Local en S. Francisco de Limache</h2>
+                </div>
+								<?php //foreache de fotos ?>
+                <div class="col-md-7">
+                  <div class="areaTabs">
+                    <img src="<?=$row['URL_FOTO']?>" class="fotorama__img" style="width: 90px; height: 68px; margin-left: -45px; margin-top: -34px;">
 
-											});
-										</script>
-									</div>
+										<?php //fin del foreache de fotos ?>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="areaDetalles">
 
-									</div>
+										<?php //arreglo con los datos de la propiedad  ?>
+                    <h4>Detalle del Inmueble <hr></h4>
 
-									<div class="col-sm-12">
-
-									<div class="sin-json">
-										<label>SECTOR</label>
-										<select class="form-control" name="barrio" id="barrio" data-placeholder="Seleccionar una zona"></select>
-										<script type="text/javascript">
-											$(document).ready(function() {
-												$(".selector-pais select").change(function() {
-													var form_data = {
-															is_ajax: 1,
-															pais: +$(".selector-pais select").val()
-													};
-													$.ajax({
-															type: "POST",
-															url: "getProvincias.php",
-															data: form_data,
-															success: function(response)
-															{
-																$('.sin-json select').html(response).fadeIn();
-															}
-													});
-												});
-
-											});
-										</script>
-									</div>
-
-									</div>
-									<div class="col-sm-12">
-										<label>TIPO INMUEBLE</label>
-										<select class="form-control" name="tipo_inmueble">
-											<option value="0" selected="selected">Todos</option>
-											<?php
-												foreach($tipoInmueble as $row){
-											?>
-											<option value="<?=$row['id']?>"><?=ucfirst($row['tipoInmueble'])?></option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<label>TIPO NEGOCIO</label>
-										<select class="form-control" name="tipo_negocio" id="tipo_negocio">
-											<option value="0" selected="selected">Todos</option>
-											<?php
-												foreach($tipoNegocio as $row){
-											?>
-											<option value="<?=$row['tipoNegocioId']?>"><?=ucfirst($row['tipoNegocioNombre'])?></option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<label>ESTADO PROPIEDAD</label>
-										<select class="form-control" name="estado" id="estado">
-											 <option value="0" selected="selected">Todos</option>
-											<?php
-												foreach($estadoPropiedad as $row){
-											?>
-											<option value="<?=$row['estadoId']?>"><?=ucfirst($row['nombreEstado'])?></option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<label>DORMITORIOS</label>
-										<select class="form-control" name="dormitorios" id="dormitorios">
-											<option value="0" selected="selected">Todos</option>
-											<?php
-												for ($i = 1; $i <= 10; $i++) {
-											?>
-											<option value="<?=$i?>"><?=$i?></option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-									<div class="col-sm-6">
-										<label>NO. BAÑOS</label>
-										<select class="form-control" name="banos" id="banos">
-										<option value="0" selected="selected">Todos</option>
-											<?php
-												for ($i = 1; $i <= 10; $i++) {
-											?>
-											<option value="<?=$i?>"><?=$i?></option>
-											<?php
-											}
-											?>
-										</select>
-									</div>
-
-									<div class="col-sm-12">
-										<button type="submit" class="btn">BUSCAR</button>
-									</div>
-								</div>
-							</form>
-							</div>
-						</div>
-					</div>  <!--fin menu lateral-->
-
-					<div class="col-md-9 col-sm-8">
-						<div class="areaListados">
-							<h2>PROPIEDADES <hr></h2>
+                    <ul>
+                      <li><span class="tt1">Código:</span> <span class="tt2"><?=$row['propiedadId']?></span></li>
+                      <li><span class="tt1">Estado: </span> <span class="tt2"><?=$row['estadoPropiedad']?></span></li>
+                      <li><span class="tt1">Ubicación: </span> <span class="tt2"><?=$row['barrionombre']?>, <?=$row['ciudadNombre']?></span></li>
+                      <li><span class="tt1">Superficie terreno:</span> <span class="tt2"><?=$row['metrosCuadrados']?> m<sup>2</sup></span></li>
 
 
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+
+                      <li><span class="tt1">Tipo Inmueble:</span> <span class="tt2"><?=$row['tipoInmueble']?></span></li>
+                      <li><span class="tt1">Negocio:</span> <span class="tt2"><?=$row['tipoNegocioNombre']?></span></li>
+                    </ul>
+
+                    <div class="areaPrecio">
+                      <span class="tt4">Precio Renta Mensual</span>
+                      <span class="tt2" style=""><?=$row['precioPropiedad']?></span>
+
+                      <span class="tt3"><?=$row['signo']?></span>
+                      <span class="tt2"><?=$row['monedanombre']?></span>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="areaBloqs">
+              <div class="dtContt">
+                <h4>Información Adicional  <hr></h4>
+                <p></p>
+                <p><strong>Jarrett.cl Código:</strong>386090</p>
+
+                <p>&nbsp;</p>
+
+                <p><span style="font-size:10pt">Se arrienda local comercial en Palmira Romano Norte, via principal de limache. Cuenta con un terreno de 660 m2, con dos construcciones una sala de ventas de 80 m2 y un galpón de 240m2 - 8 m. de alto. Estacionamientos.</span></p>
+
+                <p><span style="font-size:10pt">Especial para una comercializadora, distribuidora de productos, ferreteria, taller, etc.</span></p>
+
+                <p>&nbsp;</p>
+
+                <p><strong>Valor 45 UF mensual</strong></p>
+
+                <p><span style="font-size:10pt">Pagos adicionales al arrendar:</span></p>
+
+                <p><span style="font-size:10pt">45 UF.- Mes de garantia (una sola vez)</span></p>
+
+                <p><span style="font-size:10pt">22,5 UF - Comisión Agente Inmobiliario (una sola vez)</span></p>
+
+								<?php //arreglo de los datos ?>
+                <div>&nbsp;</div>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -177,8 +114,3 @@ require("funciones.php");
 
 </body>
 </html>
-<?php
-
-  // header("Location: index.php");
-
-?>
